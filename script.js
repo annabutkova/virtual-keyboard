@@ -264,10 +264,7 @@ const Keyboard = {
 
 window.addEventListener('DOMContentLoaded', () => {
   showTextArea();
-  const currentLang = localStorage.getItem('lang');
-  if (currentLang === '') {
-    localStorage.setItem('lang', 'EN');
-  }
+  localStorage.setItem('lang', 'EN');
   Keyboard.init();
 });
 
