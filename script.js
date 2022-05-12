@@ -40,6 +40,12 @@ const Keyboard = {
     this.elements.main.appendChild(this.elements.keysContainer);
 
     document.body.append(this.elements.main);
+
+    document.addEventListener('keydown', (event) => {
+      if (event.code === 'CapsLock') {
+        this.toggleCapsLock();
+      }
+    });
   },
 
   setLanguage() {
@@ -68,10 +74,20 @@ const Keyboard = {
       keyElement.classList.add('keyboard__key');
       const insertLineBreak = ['backspace', 'del', 'enter', 'shift '].indexOf(key) !== -1;
 
+      document.addEventListener('keydown', (event) => {
+        if (event.code === `Key${(el.en).toUpperCase()}`) {
+          keyElement.classList.add('--pushed');
+          setTimeout(() => {
+            keyElement.classList.remove('--pushed');
+          }, 200);
+        }
+      });
+
+
+
       GENERALKEYS.forEach((genkey) => {
         if (key === genkey) {
           keyElement.classList.add('general__key');
-        
         }
       });
       switch (key) {
@@ -87,7 +103,7 @@ const Keyboard = {
           break;
 
         case 'capslock':
-          keyElement.classList.add('wide2x', '--activatable');
+          keyElement.classList.add('wide2x', '--activatable', 'caps');
           keyElement.textContent = key;
 
           keyElement.addEventListener('click', () => {
@@ -179,7 +195,10 @@ const Keyboard = {
       });
     }
   },
+
 };
+
+
 
 window.addEventListener('DOMContentLoaded', () => {
   showTextArea();
