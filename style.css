@@ -82,6 +82,10 @@ text-align: center;
   border-radius: 50%;
 }
 
+.keyboard__key.--pushed {
+  background: rgb(148, 124, 244);
+}
+
 .keyboard__key.--active::after {
   background: #08ff00;
 }
