@@ -1,37 +1,40 @@
-.use-keyboard-input {
+.textarea {
   display: block;
-  width: 90%;
+  width: 1440px;
+  height: 600px;
   margin: 30px auto;
-  padding: 10px;
-  font-size: 20px;
-  height: calc(100vh - 380px);
-  min-height: 300px;
+  padding: 20px;
+  box-sizing: border-box;
+  font-size: 30px;
+
 }
 
 .keyboard {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  padding: 5px 0;
-  background: #004134;
-  box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
-  user-select: none;
-  transition: bottom 0.4s;
+  margin: 30px auto;
+  width: 1440px;
+  padding: 20px 0;
+  box-sizing: border-box;
+  background: #000000;
 }
 
-.keyboard--hidden {
-  bottom: -100%;
-}
 
 .keyboard__keys {
   text-align: center;
 }
 
+/* .keyboard__keys > div {
+  display: grid;
+  grid-template-areas: ". . . . . . . . . . . . . backspace backspace"
+  " . . . . . . . . . . . . . . ."
+  "caps caps . . . . . . . . . . . enter enter"
+  "shift shift . . . . . . . . . . . shiftR shiftR"
+  ". . . space space space space space space space . . . . .";
+  grid-template-rows: auto;
+} */
+
 .keyboard__key {
   height: 45px;
-  width: 6%;
-  max-width: 90px;
+  width: 100px;
   margin: 3px;
   border-radius: 4px;
   border: none;
@@ -54,7 +57,7 @@
 }
 
 .keyboard__key--wide {
-  width: 12%;
+  width: 160px;
 }
 
 .keyboard__key--extra-wide {
